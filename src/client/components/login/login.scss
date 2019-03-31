@@ -1,0 +1,59 @@
+.login_page{
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear,100% 100%,0 0,from(#029253),to(#00887b));
+    padding-top:20px;
+    p{
+        color: #45e3be;
+        font-size: 12px;
+        margin-left: 15px;
+        margin-top:15px;
+    }
+}
+.login_pwd{
+    width: 90%;
+    background: white;
+    margin-left: 5%;
+    border-radius: 5px;
+    overflow: hidden;
+    small{
+        color: red;
+    }
+}
+.login_pwd input {
+    line-height: 50px;
+    width: 100%;
+    border:none;
+    text-indent: 10px;
+    outline: none;
+}
+.login_pwd input:nth-of-type(1){
+    border-bottom: 1px solid #ccc;
+}
+.login_login{
+    width:90%;
+    margin-left: 5%;
+    border-radius: 5px;
+    line-height: 50px;
+    outline: none;
+    border:none;
+    background: #0ac599;
+    margin-top:20px;
+    font-size: 20px;
+    a{
+        color: white;
+    }
+}
+.login_register{
+    background: none;
+    border:1px solid #45e3be;
+    a{
+        color: #45e3be;
+    }
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}

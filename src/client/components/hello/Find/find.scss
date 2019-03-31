@@ -1,0 +1,76 @@
+.hello_find{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.find_sousuo{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+.find_sousuo div:nth-of-type(1){
+    border-right: 1px solid #ccc;
+    a{display: flex;}
+    p{
+       width: 20px;
+       font-size: 25px;
+       text-align: center;
+       line-height: 25px;
+       transform: rotate(90deg);
+    }
+}
+.find_sousuo div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    
+}
+.find_sousuo div:nth-of-type(2){
+    flex: 1;
+    input{
+        border: none;
+        outline: none;
+    }
+}
+.find_wanning{
+    line-height: 40px;
+    background: rgb(228, 247, 243);
+    text-align: center;
+    margin-top:10px;
+    color: #666;
+    font-size: 14px;
+}
+.white{
+    background: white;
+}
+.find_city{
+    width: 100%;
+    height: 100%;
+    p{
+        line-height: 20px;
+        padding:0 10px;
+        border-top:1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        color: #ccc;
+        font-size: 12px;
+    }
+    .city_list{
+        width: 100%;
+        div{
+            display: inline-block;
+            width: 33.3%;
+            overflow: hidden;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            &.bg{
+                background: rgb(228, 247, 243);
+            }
+        }
+    }
+}

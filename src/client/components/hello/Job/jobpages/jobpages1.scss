@@ -1,0 +1,104 @@
+.jobpages1{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    h4{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5px;
+        font-weight: normal;
+        span{
+            font-size: 17px;
+            color: white;
+        }
+        i{
+            color:white;
+        }
+    }
+}
+.job_scroller{
+    flex: 1;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.job_title{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    border-bottom: 1px solid #ccc;
+    dl{
+        margin-top:0;
+        margin-right: 15px;
+        font-size: 12px;
+        text-align: center;
+        dt{
+            color: gold;
+            font-size: 14px;
+        }
+    }
+}
+.job_list{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    p{
+        flex-basis: 33%;
+        text-align: center;
+        line-height: 30px;
+        font-size: 15px;
+        i{
+            color:rgb(0, 252, 176);
+        }
+    }
+}
+.job_zwyh{
+    width: 90%;
+    margin-left: 5%;
+    color:#666;
+    font-size: 13px;
+    line-height: 30px;
+}
+.job_zhiweimiaosu{
+    width: 100%;
+    line-height: 30px;
+    background:rgb(156, 255, 234);
+    color:rgb(6, 209, 148);
+    padding: 5px 10px;
+}
+.job_section{
+    list-style: none;
+    padding: 15px 10px;
+    color:#666;
+    li{
+        font-size: 14px;
+    }
+    p{
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+small{
+    font-size: 12px;
+    margin-left: 10px;
+}
+.job_footer{
+    width: 100%;
+    height: 55px;
+    padding: 10px 10px;
+    button{
+        width: 100%;
+        height: 100%;
+        background: rgb(9, 199, 142);
+        border: 0;
+        outline: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 20px;
+    }
+}
