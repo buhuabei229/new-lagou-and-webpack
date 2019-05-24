@@ -45,3 +45,13 @@ devServer: {
       }
     })
   ]
+
+{
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --colors --devtool cheap-module-eval-source-map --hot --inline",
+    "build": "cross-env NODE_ENV=production webpack --progress --colors --devtool cheap-module-source-map",
+    "build:dll": "webpack --config webpack.dll.config.js",
+    "start": "webpack-dev-server --progress --colors --devtool cheap-module-eval-source-map --hot --inline",
+    "mock": "cross-env NODE_ENV=mock npm run start"
+  },
+}
