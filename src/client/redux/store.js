@@ -1,4 +1,4 @@
-import todoapp from './reduser.js'
+import todoapp from './reducer.js'
 import { Provider } from 'react-redux';
 import { createStore, ReducersMapObject } from 'redux';
 const store = createStore(todoapp);
