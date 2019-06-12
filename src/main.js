@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'redux';
 import App from './client/components/App/App.js';
 
 ReactDOM.render(
