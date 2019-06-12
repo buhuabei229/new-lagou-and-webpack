@@ -1,7 +1,7 @@
 export const TOLOGIN = 'TOLOGIN';
-export const logaction = (val) => {
+export const ActionFunc = (opt) => {
     return {
-       type: 'TOLOGIN',
-       val 
+       type: opt.type,
+       val:opt.data
     }
 }
