@@ -3,6 +3,8 @@ const htmlwebpackplugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
+// 引入mock.js
+const Mock = require('./mock.js');
 const config = {
     entry:{
         babelPolyfill:'babel-polyfill',//添加了这个东西，才能完美的将ES6转码,否则Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，如：Set Map
@@ -15,24 +17,28 @@ const config = {
     },
     devServer: {
         historyApiFallback: true,
-        host: '0.0.0.0',
         port: 3000,
         contentBase: __dirname + '/dist',
         inline: true,
         hot: true,
         open: true,
-        setup(app){
-             app.get('/list/data', (req, res) => {
-                   let list = require('./src/client/mock/mock.json');
-                   res.json(list);
-             })
-        },
-        proxy: {//代理配置
-            '/api': {
-                target: 'http://localhost:3000',
-                pathRewrite: {'^/api' : ''},//如果不想/api传递，我们需要重写路径
+        // setup(app){
+        //      app.get('/list/data', (req, res) => {
+        //            let list = require('./src/client/mock/mock.json');
+        //            res.json(list);
+        //      })
+        // },
+        // proxy: {//代理配置
+        //     '/api': {
+        //         target: 'http://localhost:3000',
+        //         pathRewrite: {'^/api' : ''},//如果不想/api传递，我们需要重写路径
+        //     }
+        // },
+        before: function(app) {
+            if (process.env.NODE_ENV === 'mock') {
+              Mock(app);
             }
-        },
+        }
     },
     module: {
         rules: [
@@ -73,6 +79,12 @@ const config = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin("css/[name].min.css"),
+        // 设置环境变量信息
+        new webpack.DefinePlugin({
+            'process.env': {
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+            }
+        })
         // new copyWebpackPlugin([
         //     {
         //     from:__dirname+'/public',//打包的静态资源目录地址
